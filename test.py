@@ -57,7 +57,12 @@ def main():
     model = MyModel()
     data_module = MyDataModule()
     logger = DVCLiveLogger()
-    trainer = L.Trainer(log_every_n_steps=1, logger=logger, max_epochs=1)
+    trainer = L.Trainer(
+        enable_checkpointing=False,
+        log_every_n_steps=1,
+        logger=logger,
+        max_epochs=1,
+    )
     trainer.fit(model, data_module)
 
 

@@ -61,7 +61,7 @@ def main():
         enable_checkpointing=False,
         log_every_n_steps=1,
         logger=logger,
-        max_epochs=1,
+        max_epochs=100,
     )
     trainer.fit(model, data_module)
 
